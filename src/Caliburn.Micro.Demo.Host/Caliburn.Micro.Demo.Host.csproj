@@ -37,6 +37,9 @@
     <Reference Include="Autofac, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.2.0\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Integration.Mef, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mef.4.0.0\lib\net45\Autofac.Integration.Mef.dll</HintPath>
+    </Reference>
     <Reference Include="Caliburn.Micro, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.Core.3.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
@@ -117,6 +120,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Companies.Module\Caliburn.Micro.Demo.Companies.Module.csproj">
+      <Project>{55291b72-25ad-4370-9564-47c8d577ed19}</Project>
+      <Name>Caliburn.Micro.Demo.Companies.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Caliburn.Micro.Demo\Caliburn.Micro.Demo.csproj">
       <Project>{0943fdb7-99dc-430d-9151-a984a637a9dd}</Project>
       <Name>Caliburn.Micro.Demo</Name>
