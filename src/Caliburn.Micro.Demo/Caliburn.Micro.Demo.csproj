@@ -67,6 +67,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddItemEvent.cs" />
     <Compile Include="Contracts\IContent.cs" />
     <Compile Include="Contracts\IModule.cs" />
     <Compile Include="Contracts\IShell.cs" />

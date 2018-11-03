@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 
 namespace Caliburn.Micro.Demo.Companies.Module.ViewModels
 {
-    public class CompanyListViewModel : PropertyChangedBase, IContent
+    public class CompanyListViewModel : PropertyChangedBase, IContent, IHandle<AddItemEvent>
     {
-        public CompanyListViewModel()
+        private readonly IEventAggregator _eventAggregator;
+
+        public CompanyListViewModel(IEventAggregator eventAggregator)
         {
+            _eventAggregator = eventAggregator;
+            _eventAggregator.Subscribe(this);
+            
             Companies = new ObservableCollection<Company>();
             Companies.Add(new Company("Microsoft", "USA"));
             Companies.Add(new Company("Google", "USA"));
@@ -28,6 +33,11 @@ namespace Caliburn.Micro.Demo.Companies.Module.ViewModels
                 _companies = value;
                 NotifyOfPropertyChange(() => Companies);
             }
+        }
+
+        public void Handle(AddItemEvent message)
+        {
+            Companies.Add(new Company(message.Name, "USA"));
         }
     }
 }

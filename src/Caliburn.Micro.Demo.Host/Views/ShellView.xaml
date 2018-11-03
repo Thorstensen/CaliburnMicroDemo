@@ -8,6 +8,8 @@
              Width="1000" Height="900"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <ContentControl x:Name="Content"/>
-
+    <StackPanel>
+        <ContentControl x:Name="Content"/>
+        <Button x:Name="AddCompany" Content="Add new Company"/>
+    </StackPanel>
 </UserControl>

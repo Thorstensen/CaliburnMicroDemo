@@ -45,6 +45,7 @@ namespace Caliburn.Micro.Demo.Host
                 });
             }
 
+            RegisterServices(builder);
             base.ConfigureContainer(builder);
         }
 
@@ -58,6 +59,11 @@ namespace Caliburn.Micro.Demo.Host
 
             allAssemblies.AddRange(base.SelectAssemblies());
             return allAssemblies;
+        }
+
+        private void RegisterServices(ContainerBuilder builder)
+        {
+            builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
         }
 
         private static ComposablePartCatalog GetComposableCatalog()
