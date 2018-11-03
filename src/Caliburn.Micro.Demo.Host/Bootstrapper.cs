@@ -48,6 +48,18 @@ namespace Caliburn.Micro.Demo.Host
             base.ConfigureContainer(builder);
         }
 
+        protected override IEnumerable<Assembly> SelectAssemblies()
+        {
+            List<Assembly> allAssemblies = new List<Assembly>();
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            foreach (string dll in Directory.GetFiles(path, "*Module.dll"))
+                allAssemblies.Add(Assembly.LoadFile(dll));
+
+            allAssemblies.AddRange(base.SelectAssemblies());
+            return allAssemblies;
+        }
+
         private static ComposablePartCatalog GetComposableCatalog()
         {
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;

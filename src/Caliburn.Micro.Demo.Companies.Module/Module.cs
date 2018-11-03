@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Caliburn.Micro.Demo.Companies.Module.ViewModels;
+using Caliburn.Micro.Demo.Companies.Module.Views;
 using Caliburn.Micro.Demo.Contracts;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace Caliburn.Micro.Demo.Companies.Module
     {
         public void RegisterComponents(ContainerBuilder builder)
         {
-            
+            builder.RegisterType<CompanyListViewModel>().As<IContent>();
         }
     }
 }
