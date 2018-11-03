@@ -10,7 +10,7 @@ namespace Caliburn.Micro.Demo.Infrastructure
     {
         private readonly IEventAggregator _eventAggregator;
 
-        public ViewModelBase(IEventAggregator eventAggregator)
+        protected ViewModelBase(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
             var implementsHandle = this is IHandle;
