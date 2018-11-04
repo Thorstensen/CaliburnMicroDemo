@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Caliburn.Micro.Demo.Companies.Module.ViewModels
 {
-    public class CompanyListViewModel : PropertyChangedBase, IContent, IHandle<AddItemEvent>
+    public class CompanyListViewModel : PropertyChangedBase
     {
         private readonly IEventAggregator _eventAggregator;
 

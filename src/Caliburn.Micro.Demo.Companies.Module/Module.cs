@@ -16,7 +16,7 @@ namespace Caliburn.Micro.Demo.Companies.Module
     {
         public void RegisterComponents(ContainerBuilder builder)
         {
-            builder.RegisterType<CompanyListViewModel>().As<IContent>();
+           
         }
     }
 }
