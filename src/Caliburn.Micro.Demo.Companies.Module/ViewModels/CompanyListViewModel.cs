@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro.Demo.Companies.Module.Model;
 using Caliburn.Micro.Demo.Contracts;
+using Caliburn.Micro.Demo.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Caliburn.Micro.Demo.Companies.Module.ViewModels
 {
-    public class CompanyListViewModel : PropertyChangedBase, IContent, IHandle<AddItemEvent>
+    public class CompanyListViewModel : ViewModelBase, IContent, IHandle<AddItemEvent>
     {
         private readonly IEventAggregator _eventAggregator;
 
-        public CompanyListViewModel(IEventAggregator eventAggregator)
+        public CompanyListViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);

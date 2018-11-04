@@ -71,6 +71,7 @@
     <Compile Include="Contracts\IContent.cs" />
     <Compile Include="Contracts\IModule.cs" />
     <Compile Include="Contracts\IShell.cs" />
+    <Compile Include="Infrastructure\ViewModelBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
