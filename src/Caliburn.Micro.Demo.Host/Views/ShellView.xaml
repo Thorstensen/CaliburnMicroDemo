@@ -97,18 +97,23 @@
                                                                             <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" BorderThickness="0 1 0 0" 
                                                                                 BorderBrush="{DynamicResource MaterialDesignDivider}" x:Name="divider" Padding="0,5"/>
 
-                                                                            <Image Width="50" Height="50" Grid.Row="1" Grid.RowSpan="2" Source="{Binding Thumbnail}"/>
+                                                                            <Image Width="50" Height="50" Grid.Row="1" Grid.RowSpan="2" Source="{Binding Thumbnail}" Margin="0,0,5,0"/>
                                                                             <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ItemName}"/>
 
-                                                                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-                                                                                <TextBlock Text="{Binding Price, StringFormat=c}"/>
-                                                                                <materialDesign:PackIcon Kind="BasketFill" ToolTip="Add to basket" Margin="10,0">
-                                                                                </materialDesign:PackIcon>
-                                                                                <i:Interaction.Triggers>
-                                                                                    <i:EventTrigger EventName="PreviewMouseDown">
-                                                                                        <cal:ActionMessage MethodName="AddToBasket" />
-                                                                                    </i:EventTrigger>
-                                                                                </i:Interaction.Triggers>
+                                                                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                                                                                <Button Height="22">
+                                                                                    <Button.Content>
+                                                                                        <StackPanel Orientation="Horizontal">
+                                                                                            <TextBlock Text="{Binding Price, StringFormat=c}" FontSize="10"/>
+                                                                                            <materialDesign:PackIcon Kind="BasketFill" ToolTip="Add to basket" Margin="10,0"/>
+                                                                                        </StackPanel>
+                                                                                    </Button.Content>
+                                                                                    <i:Interaction.Triggers>
+                                                                                        <i:EventTrigger EventName="PreviewMouseDown">
+                                                                                            <cal:ActionMessage MethodName="AddToBasket" />
+                                                                                        </i:EventTrigger>
+                                                                                    </i:Interaction.Triggers>
+                                                                                </Button>
                                                                             </StackPanel>
                                                                         </Grid>
                                                                         <DataTemplate.Triggers>
