@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.ServiceModel.Syndication;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.Xml;
 using Caliburn.Micro.Demo.Shopping.Contracts;
 using Caliburn.Micro.Demo.Shopping.Model;
-using Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.ViewModels;
 
 namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model
 {
-    public class AmazonStore : Store<AmazonDetailedViewModel>
+    public class AmazonStore : BaseStore
     {
         const string LogoUri = "pack://application:,,,/Caliburn.Micro.Demo.Shopping.Amazon.Module;component/Resources/Images/amazon.png";
 
@@ -15,13 +19,45 @@ namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model
         public override string StoreDescription => "Amazon is an electronic commerce and cloud computing company. Selling books, DVDs, Clothing, Audiobooks and cloud services";
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
-        public override IEnumerable<IForSaleItem> GetSellableItems()
+        public override async Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync()
         {
-            return new List<IForSaleItem>()
+            var amazonRss = @"https://www.amazon.in/rss/bestsellers/books";
+            XmlReader reader = XmlReader.Create(amazonRss);
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            reader.Close();
+            var list = new List<IForSaleItem>();
+
+            foreach (var item in feed.Items)
             {
-                new Book("Domain Driven Design by Eric Evans", "Teaches the ideas behind DDD", 35d),
-                new Book("Clean Code by Uncle Bob", "Clean design in pratice", 25d)
-            };
+                var title = Regex.Match(item.Title.Text, "(?<=\\#\\d{1,2}: ).*").Groups[0].Value;
+                var summary = item.Summary.Text;
+                var url = Regex.Match(summary, "<img.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
+
+                var webClient = new WebClient();
+                byte[] imageBytes = webClient.DownloadData(url);
+
+                var randomPrice = new Random();
+                var price = randomPrice.Next(10, 100);
+
+                var book = new Book(title, summary, price, ToImage(imageBytes));
+                list.Add(book);
+            }
+
+            return list;
         }
+
+        private BitmapImage ToImage(byte[] array)
+        {
+            using (var ms = new System.IO.MemoryStream(array))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad; // here
+                image.StreamSource = ms;
+                image.EndInit();
+                return image;
+            }
+        }
+
     }
 }

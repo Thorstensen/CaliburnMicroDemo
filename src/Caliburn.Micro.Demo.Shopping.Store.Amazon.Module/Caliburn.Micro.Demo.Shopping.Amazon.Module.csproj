@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -72,10 +73,6 @@
     <Compile Include="AmazonModule.cs" />
     <Compile Include="Model\AmazonStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AmazonDetailedViewModel.cs" />
-    <Compile Include="Views\AmazonDetailedView.xaml.cs">
-      <DependentUpon>AmazonDetailedView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping\Caliburn.Micro.Demo.Shopping.csproj">
@@ -90,12 +87,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Views\AmazonDetailedView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

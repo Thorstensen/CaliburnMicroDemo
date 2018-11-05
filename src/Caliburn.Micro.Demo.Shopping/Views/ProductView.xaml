@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Caliburn.Micro.Demo.Shopping.Views.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Caliburn.Micro.Demo.Shopping.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <ItemsControl x:Name="SellableItems" Width="1300">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <materialDesign:Card Width="500" Height="250">
+                    <Grid VerticalAlignment="Stretch" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Thumbnail}" Grid.RowSpan="5" StretchDirection="Both" VerticalAlignment="Stretch"  />
+                        <TextBlock Grid.Column="1" Margin="16 16 16 2" Text="{Binding ItemName}"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
+                                       VerticalAlignment="Center" Text="{Binding Price, StringFormat=c}"></TextBlock>
+
+                        <Grid Margin="8,0" Grid.Row="2" Grid.Column="1">
+                            <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Shopping" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0} items for sale">
+                                                <Binding Path="ForSale.Count"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <Border Grid.Column="1" Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                            <Grid Margin="8">
+                                
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </materialDesign:Card>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="FrameworkElement.Margin" Value="5"/>
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+    </ItemsControl>
+
+</UserControl>

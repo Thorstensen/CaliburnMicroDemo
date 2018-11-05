@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Views
+namespace Caliburn.Micro.Demo.Shopping.Presentation.Views
 {
     /// <summary>
-    /// Interaction logic for AmazonDetailedView.xaml
+    /// Interaction logic for ProductView.xaml
     /// </summary>
-    public partial class AmazonDetailedView : UserControl
+    public partial class ProductView : UserControl
     {
-        public AmazonDetailedView()
+        public ProductView()
         {
             InitializeComponent();
         }

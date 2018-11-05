@@ -22,11 +22,11 @@
         <ItemsControl Grid.Row="1" x:Name="Stores" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Stretch">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <materialDesign:Card Width="420" Margin="4 2 8 16" Height="270">
+                    <materialDesign:Card Width="500" Margin="4 2 8 16" >
                         <Grid VerticalAlignment="Stretch" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
@@ -39,25 +39,46 @@
                             <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
                                        VerticalAlignment="Center" Text="{Binding StoreDescription}"></TextBlock>
 
-                            <Grid Margin="8,0" Grid.Row="2" Grid.Column="1">
-                                <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left">
-                                    <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="Shopping" />
-                                        <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
-                                            <TextBlock.Text>
-                                                <MultiBinding StringFormat="{}{0} items for sale">
-                                                    <Binding Path="ForSale.Count"/>
-                                                </MultiBinding>
-                                            </TextBlock.Text>
-                                        </TextBlock>
-                                    </StackPanel>
-                                    <i:Interaction.Triggers>
-                                        <i:EventTrigger EventName="Click">
-                                            <cal:ActionMessage MethodName="Open"/>
+                            <Grid Margin="8,0,0,0" Grid.Row="2" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                                        </i:EventTrigger>
-                                    </i:Interaction.Triggers>
-                                </Button>
+                                <Expander HorizontalAlignment="Stretch" Header="Show items for sale"
+                                          ExpandDirection="Down" Padding="0">
+                                    <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,15,5">
+                                        <ItemsControl ItemsSource="{Binding ForSale}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Image Width="50" Height="50" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Thumbnail}"/>
+                                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ItemName}"/>
+
+                                                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Price, StringFormat=c}"/>
+                                                            <materialDesign:PackIcon Kind="BasketFill" ToolTip="Add to basket" Margin="10,0"/>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                            <ItemsControl.ItemContainerStyle>
+                                                <Style>
+                                                    <Setter Property="FrameworkElement.Margin" Value="5"/>
+                                                </Style>
+                                            </ItemsControl.ItemContainerStyle>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Expander>
                             </Grid>
 
                             <Border Grid.Column="1" Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">

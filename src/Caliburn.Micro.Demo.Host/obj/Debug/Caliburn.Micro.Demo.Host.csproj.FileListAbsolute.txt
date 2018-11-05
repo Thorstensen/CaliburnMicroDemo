@@ -1,3 +1,9 @@
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.csprojAssemblyReference.cache
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Views\ShellView.g.cs
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\App.g.cs
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host_MarkupCompile.cache
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host_MarkupCompile.lref
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Host.exe.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Host.exe
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Host.pdb
@@ -19,6 +25,7 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Cali
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Amazon.Module.pdb
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Amazon.Module.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.pdb
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.pdb
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Autofac.xml
@@ -28,12 +35,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Cali
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Platform.Core.xml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.csprojAssemblyReference.cache
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Views\ShellView.g.cs
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\App.g.cs
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host_MarkupCompile.cache
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host_MarkupCompile.lref
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\App.baml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Views\ShellView.baml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.g.resources
