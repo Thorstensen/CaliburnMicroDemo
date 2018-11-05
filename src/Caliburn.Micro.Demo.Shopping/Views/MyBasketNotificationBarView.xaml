@@ -10,7 +10,20 @@
 
 
 
-    <materialDesign:Chip Content="{Binding NumberOfItems}">
+    <materialDesign:Chip>
+        <materialDesign:Chip.Content>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>
+                    <Run Text="{Binding NumberOfItems}"/>
+                    <Run Text="items in basket"/>
+                </TextBlock>
+                <TextBlock Margin="5,0">
+                    <Run Text="("/>
+                    <Run Text="{Binding TotalAmount, StringFormat=c}"/>
+                    <Run Text=")"/>
+                </TextBlock>
+            </StackPanel>
+        </materialDesign:Chip.Content>
         <materialDesign:Chip.Icon>
             <materialDesign:PackIcon Kind="ShoppingBasket" />
         </materialDesign:Chip.Icon>

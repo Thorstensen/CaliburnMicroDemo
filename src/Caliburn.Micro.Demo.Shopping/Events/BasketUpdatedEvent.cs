@@ -8,9 +8,10 @@ namespace Caliburn.Micro.Demo.Shopping.Events
 {
     public class BasketUpdatedEvent
     {
-        public BasketUpdatedEvent(int totalCountInBasket)
+        public BasketUpdatedEvent(int totalCountInBasket, int totalAmount)
         {
             _totalCountInBasket = totalCountInBasket;
+            _totalAmount = totalAmount;
         }
 
         private readonly int _totalCountInBasket;
@@ -20,6 +21,16 @@ namespace Caliburn.Micro.Demo.Shopping.Events
             set
             {
                 TotalCountInBasket = value;
+            }
+        }
+
+        private readonly int _totalAmount;
+        public int TotalAmount
+        {
+            get { return _totalAmount; }
+            set
+            {
+                TotalAmount = value;
             }
         }
     }

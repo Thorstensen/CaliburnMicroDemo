@@ -18,6 +18,7 @@ namespace Caliburn.Micro.Demo.Shopping.ViewModels
         public void Handle(BasketUpdatedEvent message)
         {
             NumberOfItems = message.TotalCountInBasket;
+            TotalAmount = message.TotalAmount;
         }
 
         private MyBasketViewModel _basketOverview;
@@ -39,6 +40,17 @@ namespace Caliburn.Micro.Demo.Shopping.ViewModels
             {
                 _numberOfItems = value;
                 NotifyOfPropertyChange(() => NumberOfItems);
+            }
+        }
+
+        private int _totalAmount;
+        public int TotalAmount
+        {
+            get { return _totalAmount; }
+            set
+            {
+                _totalAmount = value;
+                NotifyOfPropertyChange(() => TotalAmount);
             }
         }
     }
