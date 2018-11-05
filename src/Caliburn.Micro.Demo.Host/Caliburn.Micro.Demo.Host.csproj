@@ -148,6 +148,10 @@
       <Project>{3a27c198-9f79-4d84-beb2-7c2f6762f567}</Project>
       <Name>Caliburn.Micro.Demo.Shopping.Google.Module</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Microsoft.Module\Caliburn.Micro.Demo.Shopping.Microsoft.Module.csproj">
+      <Project>{fa92d6b5-7d5e-4142-931a-1da5964e6cd5}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Microsoft.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Store.Amazon.Module\Caliburn.Micro.Demo.Shopping.Amazon.Module.csproj">
       <Project>{e1f25e8e-afd3-41a5-a599-dec5ceff5964}</Project>
       <Name>Caliburn.Micro.Demo.Shopping.Amazon.Module</Name>

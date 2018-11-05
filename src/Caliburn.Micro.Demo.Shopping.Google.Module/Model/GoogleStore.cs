@@ -15,8 +15,7 @@ namespace Caliburn.Micro.Demo.Shopping.Google.Module.Model
 
         public override string StoreName => "Google Store";
 
-        public override string StoreDescription => "Google Store provides a variety of products such as Chromecast, Google Pixel series and Google Home";
-
+        public override string StoreDescription => "Google Store is an online hardware retailer operated by Google, that sells Google Nexus and Google Pixel devices, Chromecasts and Wear OS By Google smartwatches";
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
         public override async Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync()
