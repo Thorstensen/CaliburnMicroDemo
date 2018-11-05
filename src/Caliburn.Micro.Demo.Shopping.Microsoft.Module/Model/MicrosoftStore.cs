@@ -15,7 +15,7 @@ namespace Caliburn.Micro.Demo.Shopping.Microsoft.Module.Model
 
         public override string StoreName => "Microsoft Store";
 
-        public override string StoreDescription => "The Microsoft Store offers Signature PCs and tablets like the Microsoft Surface and from third parties such as HP, Acer, Dell, Lenovo, and VAIO. ";
+        public override string StoreDescription => "The Microsoft Store offers Signature PCs and tablets like the Microsoft Surface and from third parties such as HP, Acer, Dell, Lenovo, and VAIO.";
 
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
@@ -23,14 +23,14 @@ namespace Caliburn.Micro.Demo.Shopping.Microsoft.Module.Model
         {
             //Synchron now, will be async soon....
             var list = new List<IForSaleItem>();
-            list.Add(new GenericProduct("Google Chromecast", "", 45d,
-                @"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Chromecast-2015.jpg/300px-Chromecast-2015.jpg"));
+            list.Add(new GenericProduct("Microsoft Surface Pro 3", "", 2500d,
+                @"https://gts.jo/image/cache/catalog/products/laptops/Microsoft/microsoft-surface-pro-3-128x128.jpg"));
 
-            list.Add(new GenericProduct("Google Home", "", 140d,
-                @"https://i5.walmartimages.com/asr/494433a6-f130-47d7-87c4-a49ddadb3f8c_4.bfeee59991749977a7d925b2cfaa7886.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF"));
+            list.Add(new GenericProduct("Xbox One", "", 250d,
+                @"https://lazybee.com/images/files/small/5dx7Th7Z6zL4.jpg"));
 
-            list.Add(new GenericProduct("Google Pixel 3", "", 1000d,
-                @"https://assets.mspcdn.net/w_128,h_128,c_pad,b_white,q_auto:low,fl_lossy,f_auto/c/13633-3-1"));
+            list.Add(new GenericProduct("Office 360 Licence", "", 100d,
+                @"http://icons.iconarchive.com/icons/martz90/circle/512/office-2013-icon.png"));
 
             return list;
         }
