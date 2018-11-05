@@ -55,20 +55,36 @@
                                                         <Grid.RowDefinitions>
                                                             <RowDefinition Height="Auto"/>
                                                             <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
                                                         </Grid.RowDefinitions>
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition Width="Auto"/>
                                                             <ColumnDefinition Width="*"/>
                                                         </Grid.ColumnDefinitions>
 
-                                                        <Image Width="50" Height="50" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Thumbnail}"/>
-                                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ItemName}"/>
+                                                        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" BorderThickness="0 1 0 0" 
+                                                                BorderBrush="{DynamicResource MaterialDesignDivider}" x:Name="divider" Padding="0,5"/>
 
-                                                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                                        <Image Width="50" Height="50" Grid.Row="1" Grid.RowSpan="2" Source="{Binding Thumbnail}"/>
+                                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ItemName}"/>
+
+                                                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                                                             <TextBlock Text="{Binding Price, StringFormat=c}"/>
-                                                            <materialDesign:PackIcon Kind="BasketFill" ToolTip="Add to basket" Margin="10,0"/>
+                                                            <materialDesign:PackIcon Kind="BasketFill" ToolTip="Add to basket" Margin="10,0">
+                                                                <i:Interaction.Triggers>
+                                                                    <i:EventTrigger EventName="PreviewMouseDown">
+                                                                        <cal:ActionMessage MethodName="AddToBasket" />
+                                                                    </i:EventTrigger>
+                                                                </i:Interaction.Triggers>
+                                                            </materialDesign:PackIcon>
+
                                                         </StackPanel>
                                                     </Grid>
+                                                    <DataTemplate.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" TargetName="divider" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </DataTemplate.Triggers>
                                                 </DataTemplate>
                                             </ItemsControl.ItemTemplate>
                                             <ItemsControl.ItemContainerStyle>
@@ -76,6 +92,7 @@
                                                     <Setter Property="FrameworkElement.Margin" Value="5"/>
                                                 </Style>
                                             </ItemsControl.ItemContainerStyle>
+
                                         </ItemsControl>
                                     </StackPanel>
                                 </Expander>

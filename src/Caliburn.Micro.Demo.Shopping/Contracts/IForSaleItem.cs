@@ -13,5 +13,7 @@ namespace Caliburn.Micro.Demo.Shopping.Contracts
         string Description { get; }
         BitmapImage Thumbnail { get; } 
         double Price { get; }
+
+        void AddToBasket();
     }
 }

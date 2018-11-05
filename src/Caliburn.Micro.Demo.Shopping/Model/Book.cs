@@ -18,5 +18,10 @@ namespace Caliburn.Micro.Demo.Shopping.Model
         public double Price { get; }
 
         public BitmapImage Thumbnail { get; }
+
+        public void AddToBasket()
+        {
+            
+        }
     }
 }
