@@ -52,6 +52,7 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
+                            
                             <ItemsControl Grid.Row="1" Grid.Column="0" x:Name="Stores" HorizontalAlignment="Left" VerticalAlignment="Stretch">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>

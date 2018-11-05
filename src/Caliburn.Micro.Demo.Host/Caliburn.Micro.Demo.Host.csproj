@@ -144,6 +144,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Apple.Module\Caliburn.Micro.Demo.Shopping.Apple.Module.csproj">
+      <Project>{47e34d0b-e191-419c-9436-13fe722a0e49}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Apple.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Google.Module\Caliburn.Micro.Demo.Shopping.Google.Module.csproj">
       <Project>{3a27c198-9f79-4d84-beb2-7c2f6762f567}</Project>
       <Name>Caliburn.Micro.Demo.Shopping.Google.Module</Name>
