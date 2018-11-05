@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        
+
 
 
         <ItemsControl Grid.Row="1" x:Name="Stores" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Stretch">
@@ -39,29 +39,23 @@
                             <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="16 16 16 2" Text="{Binding StoreName}"></TextBlock>
                             <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Margin="16 0 16 8" Foreground="{DynamicResource MaterialDesignBodyLight}"
                                        VerticalAlignment="Center" Text="{Binding StoreDescription}"></TextBlock>
-                            <Border Grid.Column="1" Grid.Row="2" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0 8 0 0">
-                                <Grid Margin="8">
 
-                                 
-                                    
-                                    <ListBox ItemsSource="{Binding ForSale}"/>
-
-                                    <!--<Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
+                            <Grid Margin="8,0" Grid.Row="2" Grid.Column="1">
+                                <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
                                             x:Name="GitHubButton">
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="GithubCircle" />
-                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">GitHub</TextBlock>
-                                        </StackPanel>
-                                    </Button>
-                                    <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right"
-                                            x:Name="TwitterButton">
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Twitter" />
-                                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Twitter</TextBlock>
-                                        </StackPanel>
-                                    </Button>-->
-                                </Grid>
-                            </Border>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Shopping" />
+                                        <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} items for sale">
+                                                    <Binding Path="ForSale.Count"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+
                             <Border Grid.Column="1" Grid.Row="3" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
                                 <Grid Margin="8">
                                     <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
