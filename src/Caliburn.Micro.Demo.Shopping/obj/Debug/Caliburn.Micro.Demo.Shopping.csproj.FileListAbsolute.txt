@@ -23,3 +23,10 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.csproj.CopyComplete
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.pdb
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\MyBasketNotificationBarView.g.cs
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\MyBasketView.g.cs
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping_MarkupCompile.cache
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping_MarkupCompile.lref
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\MyBasketNotificationBarView.baml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\MyBasketView.baml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.g.resources

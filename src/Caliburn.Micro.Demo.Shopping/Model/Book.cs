@@ -3,25 +3,11 @@ using System.Windows.Media.Imaging;
 
 namespace Caliburn.Micro.Demo.Shopping.Model
 {
-    public class Book : IForSaleItem
+    public class Book : ForSaleItem
     {
-        public Book(string bookName, string description, double price, BitmapImage thumbnail)
+        public Book(string bookName, string description, double price, string thumbnail)
+            : base(bookName, description, price, thumbnail)
         {
-            ItemName = bookName;
-            Description = description;
-            Price = price;
-            Thumbnail = thumbnail;
-        }
-
-        public string ItemName { get; } 
-        public string Description { get; }
-        public double Price { get; }
-
-        public BitmapImage Thumbnail { get; }
-
-        public void AddToBasket()
-        {
-            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Caliburn.Micro.Demo.Shopping.Contracts;
+﻿using Caliburn.Micro.Demo.Shopping.Commands;
+using Caliburn.Micro.Demo.Shopping.Contracts;
 using System.Net;
 using System.Windows.Media.Imaging;
 
@@ -6,12 +7,16 @@ namespace Caliburn.Micro.Demo.Shopping.Model
 {
     public abstract class ForSaleItem : IForSaleItem
     {
+        private readonly IEventAggregator _eventAggregator;
+
         public ForSaleItem(string itemName, string description, double price, string thumbnailUrl)
         {
             ItemName = itemName;
             Description = description;
             Price = price;
             Thumbnail = DownloadImage(thumbnailUrl);
+
+            _eventAggregator = IoC.Get<IEventAggregator>();
         }
 
         public string ItemName { get; }
@@ -21,7 +26,7 @@ namespace Caliburn.Micro.Demo.Shopping.Model
 
         public void AddToBasket()
         {
-            
+            _eventAggregator.PublishOnUIThread(new AddItemToBasketCommand(this));
         }
 
         private BitmapImage DownloadImage(string url)

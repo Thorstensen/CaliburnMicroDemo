@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-1-656600004
+2-2104132617
 
-15782263971
+191429205753
 76-754702035
-Views\ProductView.xaml;
+Views\MyBasketNotificationBarView.xaml;Views\MyBasketView.xaml;
 
 True
 

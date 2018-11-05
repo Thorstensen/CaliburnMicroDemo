@@ -8,17 +8,18 @@ namespace Caliburn.Micro.Demo
 {
     public abstract class ViewModelBase : PropertyChangedBase
     {
-        private readonly IEventAggregator _eventAggregator;
+        protected readonly IEventAggregator EventAggregator;
+
         public ViewModelBase(IEventAggregator eventAggregator)
         {
-            _eventAggregator = eventAggregator;
+            EventAggregator = eventAggregator;
             var implementsHandle = this is IHandle;
             if (implementsHandle)
-                _eventAggregator.Subscribe(this);
+                EventAggregator.Subscribe(this);
         }
         ~ViewModelBase()
         {
-            _eventAggregator.Unsubscribe(this);
+            EventAggregator.Unsubscribe(this);
         }
     }
 }

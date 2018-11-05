@@ -32,32 +32,14 @@ namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model
                 var title = Regex.Match(item.Title.Text, "(?<=\\#\\d{1,2}: ).*").Groups[0].Value;
                 var summary = item.Summary.Text;
                 var url = Regex.Match(summary, "<img.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
-
-                var webClient = new WebClient();
-                byte[] imageBytes = webClient.DownloadData(url);
-
                 var randomPrice = new Random();
                 var price = randomPrice.Next(10, 100);
 
-                var book = new Book(title, summary, price, ToImage(imageBytes));
+                var book = new Book(title, summary, price, url);
                 list.Add(book);
             }
 
             return list;
         }
-
-        private BitmapImage ToImage(byte[] array)
-        {
-            using (var ms = new System.IO.MemoryStream(array))
-            {
-                var image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad; // here
-                image.StreamSource = ms;
-                image.EndInit();
-                return image;
-            }
-        }
-
     }
 }

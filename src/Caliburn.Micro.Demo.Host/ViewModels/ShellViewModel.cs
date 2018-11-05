@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Windows.Input;
 using System.Linq;
+using Caliburn.Micro.Demo.Shopping.ViewModels;
 
 namespace Caliburn.Micro.Demo.Host.ViewModels
 {
@@ -13,10 +14,13 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
     {
         private readonly IEventAggregator _aggregator;
 
-        public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores)
+        public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores, MyBasketViewModel basketModel, 
+            MyBasketNotificationBarViewModel notificationbar)
         {
             _aggregator = aggregator;
             Stores = new ObservableCollection<IStore>(stores);
+            Basket = basketModel;
+            NotificationBar = notificationbar;
         }
 
         private ObservableCollection<IStore> _stores;
@@ -29,5 +33,8 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
                 NotifyOfPropertyChange(() => Stores);
             }
         }
+
+        public object Basket { get; set; }
+        public object NotificationBar { get; set; }
     }
 }
