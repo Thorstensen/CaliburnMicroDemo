@@ -10,7 +10,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Cali
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Autofac.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Autofac.Integration.Mef.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Autofac.dll
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Companies.Module.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Amazon.Module.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.dll
@@ -20,8 +19,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Cali
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\MaterialDesignColors.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\System.Windows.Interactivity.dll
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Companies.Module.pdb
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Companies.Module.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Amazon.Module.pdb
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Amazon.Module.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.pdb
@@ -44,3 +41,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Cali
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.csproj.CopyComplete
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.exe
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\obj\Debug\Caliburn.Micro.Demo.Host.pdb
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.pdb
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Host\bin\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.dll.config

@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro.Demo.Shopping.Contracts;
-using Caliburn.Micro.Demo.Shopping.ViewModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Dynamic;
@@ -22,18 +21,6 @@ namespace Caliburn.Micro.Demo.Shopping.Model
             var items = await GetSellableItemsAsync();
             ForSale = new ObservableCollection<IForSaleItem>(items);
         }
-
-        public void Open()
-        {
-            var windowManager = new WindowManager();
-            dynamic settings = new ExpandoObject();
-            settings.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            settings.Width = 450;
-            settings.MinHeight = 500;
-            settings.Title = $"{StoreName}";
-            windowManager.ShowWindow(new ProductViewModel(ForSale), null, settings);
-        }
-
         public abstract string StoreName { get; }
         public abstract string StoreDescription { get; }
         public abstract BitmapImage StoreLogo { get; }

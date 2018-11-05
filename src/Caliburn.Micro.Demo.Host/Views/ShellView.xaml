@@ -18,9 +18,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-
-            <ItemsControl Grid.Row="1" x:Name="Stores" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+            <ItemsControl Grid.Row="1" Grid.Column="0" x:Name="Stores" HorizontalAlignment="Left" VerticalAlignment="Stretch">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <materialDesign:Card Width="500" Margin="4 2 8 16" >
@@ -78,7 +81,6 @@
                                                                         </i:EventTrigger>
                                                                     </i:Interaction.Triggers>
                                                                 </materialDesign:PackIcon>
-
                                                             </StackPanel>
                                                         </Grid>
                                                         <DataTemplate.Triggers>
@@ -123,6 +125,22 @@
                 </ItemsControl.ItemTemplate>
 
             </ItemsControl>
+
+            <!--<materialDesign:Card Grid.Row="1" Grid.Column="1" Width="300" VerticalAlignment="Stretch">
+                
+            </materialDesign:Card>-->
+
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="My Basket" Style="{DynamicResource MaterialDesignCardGroupBox}" Width="300">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Basket" Height="32" Width="32" VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+            
+            </GroupBox>
 
         </Grid>
     </Border>

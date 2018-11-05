@@ -1,5 +1,4 @@
-﻿using Caliburn.Micro.Demo.Companies.Module;
-using Caliburn.Micro.Demo.Contracts;
+﻿using Caliburn.Micro.Demo.Contracts;
 using Caliburn.Micro.Demo.Shopping.Contracts;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

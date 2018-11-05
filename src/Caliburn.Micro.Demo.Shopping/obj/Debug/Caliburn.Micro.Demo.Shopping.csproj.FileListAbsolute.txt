@@ -1,7 +1,4 @@
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.csprojAssemblyReference.cache
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\ProductView.g.cs
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping_MarkupCompile.cache
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping_MarkupCompile.lref
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\Caliburn.Micro.Demo.Shopping.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\Caliburn.Micro.Demo.Shopping.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\Caliburn.Micro.Demo.Shopping.pdb
@@ -22,8 +19,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\Caliburn.Micro.Platform.Core.xml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Views\ProductView.baml
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.g.resources
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.csproj.CoreCompileInputs.cache
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.csproj.CopyComplete
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping\obj\Debug\Caliburn.Micro.Demo.Shopping.dll
