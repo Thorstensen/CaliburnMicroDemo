@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Caliburn.Micro.Demo.Shopping.ViewModels
 {
-    public class MyBasketNotificationBarViewModel : ViewModelBase, IHandle<BasketUpdatedEvent>
+    public class MyBasketNotificationBarViewModel : ViewModelBase,
+        IHandle<BasketUpdatedEvent>
     {
-
-
-        public MyBasketNotificationBarViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
+        public MyBasketNotificationBarViewModel(IEventAggregator eventAggregator, MyBasketViewModel basket) : base(eventAggregator)
         {
-
+            BasketOverview = basket;
         }
 
         public void Handle(BasketUpdatedEvent message)
@@ -21,6 +20,16 @@ namespace Caliburn.Micro.Demo.Shopping.ViewModels
             NumberOfItems = message.TotalCountInBasket;
         }
 
+        private MyBasketViewModel _basketOverview;
+        public MyBasketViewModel BasketOverview
+        {
+            get => _basketOverview;
+            set
+            {
+                _basketOverview = value;
+                NotifyOfPropertyChange(() => BasketOverview);
+            }
+        }
 
         private int _numberOfItems;
         public int NumberOfItems

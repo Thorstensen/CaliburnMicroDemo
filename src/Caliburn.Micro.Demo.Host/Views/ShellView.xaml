@@ -31,6 +31,7 @@
                                         x:Name="MenuToggleButton"/>
                         
                         <ContentControl x:Name="NotificationBar" DockPanel.Dock="Right" VerticalAlignment="Center" />
+                        <ContentControl x:Name="Basket" DockPanel.Dock="Right" VerticalAlignment="Center" />
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Virtual Shopping Aggregator</TextBlock>
                     </DockPanel>
                 </materialDesign:ColorZone>

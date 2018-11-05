@@ -14,12 +14,11 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
     {
         private readonly IEventAggregator _aggregator;
 
-        public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores, MyBasketViewModel basketModel, 
+        public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores, 
             MyBasketNotificationBarViewModel notificationbar)
         {
             _aggregator = aggregator;
             Stores = new ObservableCollection<IStore>(stores);
-            Basket = basketModel;
             NotificationBar = notificationbar;
         }
 
@@ -33,8 +32,6 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
                 NotifyOfPropertyChange(() => Stores);
             }
         }
-
-        public object Basket { get; set; }
         public object NotificationBar { get; set; }
     }
 }
