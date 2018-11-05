@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using Caliburn.Micro.Demo.Shopping.Contracts;
 using Caliburn.Micro.Demo.Shopping.Model;
+using Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.ViewModels;
 
 namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model
 {
-    public class AmazonStore : Shopping.Model.Store
+    public class AmazonStore : Store<AmazonDetailedViewModel>
     {
         const string LogoUri = "pack://application:,,,/Caliburn.Micro.Demo.Shopping.Amazon.Module;component/Resources/Images/amazon.png";
 

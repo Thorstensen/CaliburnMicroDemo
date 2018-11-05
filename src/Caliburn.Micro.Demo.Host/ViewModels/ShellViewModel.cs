@@ -14,7 +14,6 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
     {
         private readonly IEventAggregator _aggregator;
 
-
         public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores)
         {
             _aggregator = aggregator;

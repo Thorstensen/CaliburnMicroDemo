@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Caliburn.Micro.Demo.Host.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              Width="1000" Height="900"
              d:DesignHeight="450" d:DesignWidth="800"
@@ -16,9 +18,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-
-
 
         <ItemsControl Grid.Row="1" x:Name="Stores" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Stretch">
             <ItemsControl.ItemTemplate>
@@ -41,8 +40,7 @@
                                        VerticalAlignment="Center" Text="{Binding StoreDescription}"></TextBlock>
 
                             <Grid Margin="8,0" Grid.Row="2" Grid.Column="1">
-                                <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left"
-                                            x:Name="GitHubButton">
+                                <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="Shopping" />
                                         <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
@@ -53,6 +51,12 @@
                                             </TextBlock.Text>
                                         </TextBlock>
                                     </StackPanel>
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Click">
+                                            <cal:ActionMessage MethodName="Open"/>
+
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
                                 </Button>
                             </Grid>
 

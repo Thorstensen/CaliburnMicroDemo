@@ -14,5 +14,6 @@ namespace Caliburn.Micro.Demo.Shopping.Contracts
         string StoreDescription { get; }
         BitmapImage StoreLogo { get; }
         ObservableCollection<IForSaleItem> ForSale { get; }
+        void Open();
     }
 }

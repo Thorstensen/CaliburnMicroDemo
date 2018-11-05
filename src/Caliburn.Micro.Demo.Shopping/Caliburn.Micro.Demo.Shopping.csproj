@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Caliburn.Micro.Demo\Caliburn.Micro.Demo.csproj">
+      <Project>{0943FDB7-99DC-430D-9151-A984A637A9DD}</Project>
+      <Name>Caliburn.Micro.Demo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
