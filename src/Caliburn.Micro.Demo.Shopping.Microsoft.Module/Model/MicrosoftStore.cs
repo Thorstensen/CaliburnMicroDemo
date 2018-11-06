@@ -19,7 +19,7 @@ namespace Caliburn.Micro.Demo.Shopping.Microsoft.Module.Model
 
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
-        public override async Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync()
+        public override async Task<List<IForSaleItem>> GetSellableItemsAsync()
         {
             //Synchron now, will be async soon....
             var list = new List<IForSaleItem>();

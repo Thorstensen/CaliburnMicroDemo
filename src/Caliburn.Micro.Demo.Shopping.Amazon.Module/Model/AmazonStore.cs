@@ -19,27 +19,30 @@ namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model
         public override string StoreDescription => "Amazon is an electronic commerce and cloud computing company. Selling books, DVDs, Clothing, Audiobooks and cloud services";
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
-        public override async Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync()
+        public override Task<List<IForSaleItem>> GetSellableItemsAsync()
         {
-            var amazonRss = @"https://www.amazon.in/rss/bestsellers/books";
-            XmlReader reader = XmlReader.Create(amazonRss);
-            SyndicationFeed feed = SyndicationFeed.Load(reader);
-            reader.Close();
-            var list = new List<IForSaleItem>();
-
-            foreach (var item in feed.Items)
+            return Task.Run(() =>
             {
-                var title = Regex.Match(item.Title.Text, "(?<=\\#\\d{1,2}: ).*").Groups[0].Value;
-                var summary = item.Summary.Text;
-                var url = Regex.Match(summary, "<img.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
-                var randomPrice = new Random();
-                var price = randomPrice.Next(10, 100);
+                var amazonRss = @"https://www.amazon.in/rss/bestsellers/books";
+                XmlReader reader = XmlReader.Create(amazonRss);
+                SyndicationFeed feed = SyndicationFeed.Load(reader);
+                reader.Close();
+                var list = new List<IForSaleItem>();
 
-                var book = new Book(title, summary, price, url);
-                list.Add(book);
-            }
+                foreach (var item in feed.Items)
+                {
+                    var title = Regex.Match(item.Title.Text, "(?<=\\#\\d{1,2}: ).*").Groups[0].Value;
+                    var summary = item.Summary.Text;
+                    var url = Regex.Match(summary, "<img.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
+                    var randomPrice = new Random();
+                    var price = randomPrice.Next(10, 100);
 
-            return list;
+                    var book = new Book(title, summary, price, url);
+                    list.Add(book);
+                }
+
+                return list;
+            });
         }
     }
 }

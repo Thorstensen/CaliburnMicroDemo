@@ -18,7 +18,7 @@ namespace Caliburn.Micro.Demo.Shopping.Google.Module.Model
         public override string StoreDescription => "Google Store is an online hardware retailer operated by Google, that sells Google Nexus and Google Pixel devices, Chromecasts and Wear OS By Google smartwatches";
         public override BitmapImage StoreLogo => new BitmapImage(new Uri(LogoUri));
 
-        public override async Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync()
+        public override async Task<List<IForSaleItem>> GetSellableItemsAsync()
         {
             //Synchron now, will be async soon....
             var list = new List<IForSaleItem>();

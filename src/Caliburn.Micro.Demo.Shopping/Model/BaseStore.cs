@@ -24,7 +24,7 @@ namespace Caliburn.Micro.Demo.Shopping.Model
         public abstract string StoreName { get; }
         public abstract string StoreDescription { get; }
         public abstract BitmapImage StoreLogo { get; }
-        public abstract Task<IEnumerable<IForSaleItem>> GetSellableItemsAsync();
+        public abstract Task<List<IForSaleItem>> GetSellableItemsAsync();
 
         private ObservableCollection<IForSaleItem> _forSale;
         public ObservableCollection<IForSaleItem> ForSale

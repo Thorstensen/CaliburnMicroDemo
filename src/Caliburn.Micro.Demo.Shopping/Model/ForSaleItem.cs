@@ -2,6 +2,7 @@
 using Caliburn.Micro.Demo.Shopping.Contracts;
 using System.Net;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Caliburn.Micro.Demo.Shopping.Model
 {
@@ -14,14 +15,13 @@ namespace Caliburn.Micro.Demo.Shopping.Model
             ItemName = itemName;
             Description = description;
             Price = price;
-            Thumbnail = DownloadImage(thumbnailUrl);
-
+            Dispatcher.CurrentDispatcher.Invoke(() => Thumbnail = DownloadImage(thumbnailUrl));
             _eventAggregator = IoC.Get<IEventAggregator>();
         }
 
         public string ItemName { get; }
         public string Description { get; }
-        public BitmapImage Thumbnail { get; }
+        public BitmapImage Thumbnail { get; private set; }
         public double Price { get; }
 
         public void AddToBasket()
@@ -46,6 +46,7 @@ namespace Caliburn.Micro.Demo.Shopping.Model
                 image.CacheOption = BitmapCacheOption.OnLoad; // here
                 image.StreamSource = ms;
                 image.EndInit();
+                image.Freeze();
                 return image;
             }
         }
