@@ -11,7 +11,6 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Mod
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\bin\Debug\Caliburn.Micro.xml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\bin\Debug\Caliburn.Micro.Platform.xml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\bin\Debug\Caliburn.Micro.Platform.Core.xml
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\bin\Debug\Autofac.xml
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.csprojAssemblyReference.cache
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.g.resources
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Google.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Google.Module.csproj.CoreCompileInputs.cache
