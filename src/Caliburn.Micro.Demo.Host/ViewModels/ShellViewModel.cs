@@ -1,7 +1,11 @@
-﻿using Caliburn.Micro.Demo.Companies.Module;
-using Caliburn.Micro.Demo.Contracts;
+﻿using Caliburn.Micro.Demo.Contracts;
+using Caliburn.Micro.Demo.Shopping.Contracts;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Windows.Input;
+using System.Linq;
+using Caliburn.Micro.Demo.Shopping.ViewModels;
 
 namespace Caliburn.Micro.Demo.Host.ViewModels
 {
@@ -10,28 +14,24 @@ namespace Caliburn.Micro.Demo.Host.ViewModels
     {
         private readonly IEventAggregator _aggregator;
 
-        public ShellViewModel(IContent content, IEventAggregator aggregator)
+        public ShellViewModel(IEventAggregator aggregator, IEnumerable<IStore> stores, 
+            MyBasketNotificationBarViewModel notificationbar)
         {
-            Content = content;
             _aggregator = aggregator;
+            Stores = new ObservableCollection<IStore>(stores);
+            NotificationBar = notificationbar;
         }
 
-        public void AddCompany()
+        private ObservableCollection<IStore> _stores;
+        public ObservableCollection<IStore> Stores
         {
-            _aggregator.PublishOnUIThread(new AddItemEvent("Company 1"));
-        }
-
-        private object _content;
-        public object Content
-        {
-            get => _content;
+            get { return _stores; }
             set
             {
-                _content = value;
-                NotifyOfPropertyChange(() => Content);
+                _stores = value;
+                NotifyOfPropertyChange(() => Stores);
             }
         }
-
-        
+        public object NotificationBar { get; set; }
     }
 }

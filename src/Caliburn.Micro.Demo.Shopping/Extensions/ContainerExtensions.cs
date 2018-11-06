@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Caliburn.Micro.Demo.Contracts
+namespace Caliburn.Micro.Demo.Shopping.Extensions
 {
-    public interface IContent
-    {
-    }
+    
 }

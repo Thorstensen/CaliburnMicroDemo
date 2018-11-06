@@ -52,6 +52,12 @@
     <Reference Include="Caliburn.Micro.Platform.Core, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.0.1\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1224, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1-ci1224\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -109,6 +115,24 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Roboto\Roboto-Black.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-BlackItalic.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Bold.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-BoldItalic.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Italic.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Light.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-LightItalic.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Medium.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-MediumItalic.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Thin.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-ThinItalic.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-Bold.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-BoldItalic.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-Italic.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-Light.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-LightItalic.ttf" />
+    <Resource Include="Resources\Roboto\RobotoCondensed-Regular.ttf" />
+    <Resource Include="Resources\Roboto\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -120,14 +144,33 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Caliburn.Micro.Demo.Companies.Module\Caliburn.Micro.Demo.Companies.Module.csproj">
-      <Project>{55291b72-25ad-4370-9564-47c8d577ed19}</Project>
-      <Name>Caliburn.Micro.Demo.Companies.Module</Name>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Apple.Module\Caliburn.Micro.Demo.Shopping.Apple.Module.csproj">
+      <Project>{47e34d0b-e191-419c-9436-13fe722a0e49}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Apple.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Google.Module\Caliburn.Micro.Demo.Shopping.Google.Module.csproj">
+      <Project>{3a27c198-9f79-4d84-beb2-7c2f6762f567}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Google.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Microsoft.Module\Caliburn.Micro.Demo.Shopping.Microsoft.Module.csproj">
+      <Project>{fa92d6b5-7d5e-4142-931a-1da5964e6cd5}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Microsoft.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping.Store.Amazon.Module\Caliburn.Micro.Demo.Shopping.Amazon.Module.csproj">
+      <Project>{e1f25e8e-afd3-41a5-a599-dec5ceff5964}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping.Amazon.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Caliburn.Micro.Demo.Shopping\Caliburn.Micro.Demo.Shopping.csproj">
+      <Project>{41356700-F429-4F5D-95E4-6699C0190709}</Project>
+      <Name>Caliburn.Micro.Demo.Shopping</Name>
     </ProjectReference>
     <ProjectReference Include="..\Caliburn.Micro.Demo\Caliburn.Micro.Demo.csproj">
       <Project>{0943fdb7-99dc-430d-9151-a984a637a9dd}</Project>
       <Name>Caliburn.Micro.Demo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
