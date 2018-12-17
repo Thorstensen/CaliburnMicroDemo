@@ -10,7 +10,6 @@ namespace Caliburn.Micro.Demo.EventAggregation
     public class Handler
     {
         private readonly WeakReference _subscribedDataContext;
-        private readonly IComponentContext _componentContext;
         private Dictionary<Type, ExecuteStrategy> _supportedHandlers = new Dictionary<Type, ExecuteStrategy>(); 
 
         public Handler(object subscriber, IComponentContext componentContext)
