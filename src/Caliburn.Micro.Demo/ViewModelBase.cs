@@ -14,14 +14,11 @@ namespace Caliburn.Micro.Demo
         public ViewModelBase(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
-            var implementsHandle = this is IHandle;
-            if (implementsHandle)
-                EventAggregator.Subscribe(this);
+        }
 
-            //~ViewModelBase()
-            //{
-            //    EventAggregator.Unsubscribe(this);
-            //}
+        ~ViewModelBase()
+        {
+            EventAggregator.Unsubscribe(this);
         }
     }
 }

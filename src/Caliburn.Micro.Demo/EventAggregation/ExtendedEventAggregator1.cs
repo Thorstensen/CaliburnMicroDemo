@@ -39,6 +39,22 @@ namespace Caliburn.Micro.Demo.EventAggregation
                 }
             });
         }
+
+        public override void Unsubscribe(object subscriber)
+        {
+            if (subscriber == null)
+                throw new ArgumentNullException(nameof(subscriber));
+
+            lock (_handlers)
+            {
+                var found = _handlers.FirstOrDefault(x => x.Matches(subscriber));
+
+                if (found != null)
+                {
+                    _handlers.Remove(found);
+                }
+            }
+        }
     }
 
     public class Handler1
@@ -79,6 +95,11 @@ namespace Caliburn.Micro.Demo.EventAggregation
                     executeStrategy.Execute(_subscribedDataContext.Target, message);
                 }
             }
+        }
+
+        public bool Matches(object instance)
+        {
+            return _subscribedDataContext.Target == instance;
         }
 
         public bool IsDead => _subscribedDataContext.Target == null;
