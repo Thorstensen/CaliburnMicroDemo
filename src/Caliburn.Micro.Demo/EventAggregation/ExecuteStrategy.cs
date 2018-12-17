@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Reflection;
 
 
@@ -6,16 +7,22 @@ namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class ExecuteStrategy
     {
-        public ExecuteStrategy(MethodInfo command, Type canExecuteType)
+        private readonly IComponentContext _componentContext;
+
+        public ExecuteStrategy(MethodInfo command, Type canExecuteType, IComponentContext componentContext)
         {
             Command = command;
             CanExecuteGuard = canExecuteType;
+            _componentContext = componentContext;
         }
 
         public bool CanExecute(object message)
         {
-            var instance = (IExecuteGuard)Activator.CreateInstance(CanExecuteGuard);
-            return instance.CanExecute(message);
+            var type = _componentContext.Resolve(CanExecuteGuard) as IExecuteGuard;
+            if (type == null)
+                throw new Exception($"{CanExecuteGuard.FullName} does not implement interface {nameof(IExecuteGuard)}");
+            
+            return type.CanExecute(message);
         }
 
         public void Execute(object target, object message)

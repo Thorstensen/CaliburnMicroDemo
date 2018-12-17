@@ -80,10 +80,9 @@
     <Compile Include="EventAggregation\AlwaysTrueGuard.cs" />
     <Compile Include="EventAggregation\ExecuteStrategy.cs" />
     <Compile Include="EventAggregation\ExtendedEventAggregator.cs" />
-    <Compile Include="EventAggregation\ExtendedEventAggregator1.cs" />
+    <Compile Include="EventAggregation\Handler.cs" />
     <Compile Include="EventAggregation\ICanHandle.cs" />
     <Compile Include="EventAggregation\IExecuteGuard.cs" />
-    <Compile Include="EventAggregation\ISubscribable.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

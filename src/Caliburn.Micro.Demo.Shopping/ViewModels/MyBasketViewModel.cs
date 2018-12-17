@@ -11,8 +11,7 @@ namespace Caliburn.Micro.Demo.Shopping.ViewModels
     {
         public MyBasketViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
         {
-            var ea = EventAggregator as ExtendedEventAggregator1;
-            ea.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Handle(AddItemToBasketCommand message)

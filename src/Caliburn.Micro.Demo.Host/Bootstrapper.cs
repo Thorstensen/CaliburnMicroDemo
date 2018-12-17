@@ -64,7 +64,7 @@ namespace Caliburn.Micro.Demo.Host
 
         private void RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterType<ExtendedEventAggregator1>().As<IEventAggregator>().SingleInstance();
+            builder.RegisterType<ExtendedEventAggregator>().As<IEventAggregator>().SingleInstance();
         }
 
         private static ComposablePartCatalog GetComposableCatalog()

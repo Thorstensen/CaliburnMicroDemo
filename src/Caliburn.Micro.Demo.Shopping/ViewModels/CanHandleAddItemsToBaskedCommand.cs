@@ -9,6 +9,11 @@ namespace Caliburn.Micro.Demo.Shopping.ViewModels
 {
     public class CanHandleAddItemsToBaskedCommand : IExecuteGuard
     {
+        public CanHandleAddItemsToBaskedCommand(IEventAggregator ea)
+        {
+
+        }
+
         public bool CanExecute(object message)
         {
             return true;

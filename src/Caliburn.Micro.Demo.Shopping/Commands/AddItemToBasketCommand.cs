@@ -3,7 +3,7 @@ using Caliburn.Micro.Demo.Shopping.Contracts;
 
 namespace Caliburn.Micro.Demo.Shopping.Commands
 {
-    public class AddItemToBasketCommand : ISubscribable
+    public class AddItemToBasketCommand
     {
         public AddItemToBasketCommand(IForSaleItem item)
         {
