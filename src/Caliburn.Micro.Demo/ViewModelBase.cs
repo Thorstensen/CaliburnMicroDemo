@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro.Demo.EventAggregation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,11 @@ namespace Caliburn.Micro.Demo
             var implementsHandle = this is IHandle;
             if (implementsHandle)
                 EventAggregator.Subscribe(this);
-        }
-        ~ViewModelBase()
-        {
-            EventAggregator.Unsubscribe(this);
+
+            //~ViewModelBase()
+            //{
+            //    EventAggregator.Unsubscribe(this);
+            //}
         }
     }
 }

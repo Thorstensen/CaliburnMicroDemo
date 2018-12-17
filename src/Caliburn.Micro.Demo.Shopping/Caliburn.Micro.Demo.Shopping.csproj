@@ -80,8 +80,10 @@
     <Compile Include="Model\ForSaleItem.cs" />
     <Compile Include="Model\GenericProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CanHandleAddItemsToBaskedCommand.cs" />
     <Compile Include="ViewModels\MyBasketNotificationBarViewModel.cs" />
     <Compile Include="ViewModels\MyBasketViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingLimitGuard.cs" />
     <Compile Include="Views\MyBasketNotificationBarView.xaml.cs">
       <DependentUpon>MyBasketNotificationBarView.xaml</DependentUpon>
     </Compile>
