@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Caliburn.Micro.Demo.Contracts;
 using Caliburn.Micro.Demo.EventAggregation;
+using Caliburn.Micro.Demo.Services;
 using Caliburn.Micro.Demo.Shopping.Extensions;
 using Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model;
 using Caliburn.Micro.Demo.Shopping.ViewModels;
@@ -16,6 +17,8 @@ namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module
             builder.RegisterStore<AmazonStore>();
             builder.RegisterCommandGuard<CanHandleAddItemsToBaskedCommand>();
             builder.RegisterCommandGuard<ShoppingLimitGuard>();
+
+            builder.RegisterType<BasketService>().As<IBasketService>();
         }
     }
 }

@@ -2,7 +2,6 @@
 using System;
 using System.Reflection;
 
-
 namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class ExecuteStrategy
@@ -28,7 +27,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
                 }
                 catch (Exception e)
                 {
-                    throw new Exception($"Cannot locate {CanExecuteGuard.FullName} in container nor create an instance of it. See inner exception:", e);
+                    throw new Exception($"Cannot locate {name} in container nor create an instance of it. See inner exception:", e);
                 }
             }
 
