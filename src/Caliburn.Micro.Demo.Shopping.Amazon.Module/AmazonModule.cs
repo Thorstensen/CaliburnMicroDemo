@@ -15,6 +15,7 @@ namespace Caliburn.Micro.Demo.Shopping.Store.Amazon.Module
         {
             builder.RegisterStore<AmazonStore>();
             builder.RegisterType<CanHandleAddItemsToBaskedCommand>();
+            builder.RegisterType<ShoppingLimitGuard>();
         }
     }
 }

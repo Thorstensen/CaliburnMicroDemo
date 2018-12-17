@@ -19,7 +19,10 @@ namespace Caliburn.Micro.Demo.EventAggregation
         public override void Subscribe(object subscriber)
         {
             var handler = new Handler(subscriber, _componentContext);
-            _handlers.Add(handler);
+            lock (_handlers)
+            {
+                _handlers.Add(handler);
+            }
         }
 
         public override void Publish(object message, Action<System.Action> marshal)

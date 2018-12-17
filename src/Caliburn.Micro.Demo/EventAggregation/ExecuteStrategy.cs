@@ -20,7 +20,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
         {
             var type = _componentContext.Resolve(CanExecuteGuard) as IExecuteGuard;
             if (type == null)
-                throw new Exception($"{CanExecuteGuard.FullName} does not implement interface {nameof(IExecuteGuard)}");
+                throw new Exception($"Cannot locate {CanExecuteGuard.FullName} in Container.");
             
             return type.CanExecute(message);
         }
