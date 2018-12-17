@@ -18,11 +18,21 @@ namespace Caliburn.Micro.Demo.EventAggregation
 
         public bool CanExecute(object message)
         {
-            var type = _componentContext.Resolve(CanExecuteGuard) as IExecuteGuard;
-            if (type == null)
-                throw new Exception($"Cannot locate {CanExecuteGuard.FullName} in Container.");
-            
-            return type.CanExecute(message);
+            object resolvedType = null;
+            var name = CanExecuteGuard.FullName;
+            if(!_componentContext.TryResolveNamed(name, typeof(IExecuteGuard), out resolvedType))
+            {
+                try
+                {
+                    resolvedType = (IExecuteGuard)Activator.CreateInstance(CanExecuteGuard);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Cannot locate {CanExecuteGuard.FullName} in container nor create an instance of it. See inner exception:", e);
+                }
+            }
+
+            return ((IExecuteGuard)resolvedType).CanExecute(message);
         }
 
         public void Execute(object target, object message)
