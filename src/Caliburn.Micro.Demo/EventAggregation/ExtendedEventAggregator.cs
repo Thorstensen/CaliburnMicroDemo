@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Caliburn.Micro.Demo.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,13 @@ namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class ExtendedEventAggregator : EventAggregator
     {
-        private List<Handler> _handlers = new List<Handler>();
+        private readonly List<Handler> _handlers;
         private readonly IComponentContext _componentContext;
 
         public ExtendedEventAggregator(IComponentContext componentContext)
         {
             _componentContext = componentContext;
+            _handlers = new List<Handler>();
         }
 
         public override void Subscribe(object subscriber)
@@ -51,9 +53,8 @@ namespace Caliburn.Micro.Demo.EventAggregation
 
         public override void Unsubscribe(object subscriber)
         {
-            if (subscriber == null)
-                throw new ArgumentNullException(nameof(subscriber));
-
+            Guard.Against.Null(subscriber);
+            
             lock (_handlers)
             {
                 var found = _handlers.FirstOrDefault(x => x.Matches(subscriber));

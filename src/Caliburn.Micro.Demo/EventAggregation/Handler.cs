@@ -47,10 +47,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
             }
         }
 
-        public bool Matches(object instance)
-        {
-            return _subscribedDataContext.Target == instance;
-        }
+        public bool Matches(object instance) => _subscribedDataContext.Target == instance;
 
         public bool IsDead => _subscribedDataContext.Target == null;
     }
