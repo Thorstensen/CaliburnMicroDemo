@@ -38,4 +38,6 @@ namespace Caliburn.Micro.Demo.Framework
                 throw new ArgumentException($"Given object {@this} is equal to {compiledReference}");
         }
     }
+
+   
 }

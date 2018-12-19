@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Features.Indexed;
 using Caliburn.Micro.Demo.Framework;
 using System;
 using System.Collections.Generic;
@@ -11,16 +12,24 @@ namespace Caliburn.Micro.Demo.EventAggregation
     {
         private readonly List<Handler> _handlers;
         private readonly IComponentContext _componentContext;
+        private readonly IIndex<string, IExecuteGuard> _registeredGuards;
 
-        public ExtendedEventAggregator(IComponentContext componentContext)
+        //public ExtendedEventAggregator(IComponentContext componentContext)
+        //{
+        //    _componentContext = componentContext;
+        //    _handlers = new List<Handler>();
+        //}
+
+        public ExtendedEventAggregator(IIndex<string, IExecuteGuard> registeredGuards)
         {
-            _componentContext = componentContext;
+            _registeredGuards = registeredGuards;
             _handlers = new List<Handler>();
         }
 
+
         public override void Subscribe(object subscriber)
         {
-            var handler = new Handler(subscriber, _componentContext);
+            var handler = new Handler(subscriber, _registeredGuards);
             lock (_handlers)
             {
                 _handlers.Add(handler);

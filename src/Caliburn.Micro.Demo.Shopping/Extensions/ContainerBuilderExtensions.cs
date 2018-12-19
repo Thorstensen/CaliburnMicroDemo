@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Caliburn.Micro.Demo.EventAggregation;
 using Caliburn.Micro.Demo.Shopping.Contracts;
 
 namespace Caliburn.Micro.Demo.Shopping.Extensions
@@ -10,14 +9,6 @@ namespace Caliburn.Micro.Demo.Shopping.Extensions
             where TStore : IStore, new()
         {
             builder.RegisterType<TStore>().As<IStore>();
-        }
-
-        public static void RegisterCommandGuard<TCommandGuard>(this ContainerBuilder builder)
-            where TCommandGuard : IExecuteGuard
-        {
-            var type = typeof(TCommandGuard);
-            var typeName = type.FullName;
-            builder.RegisterType<TCommandGuard>().Named(typeName, typeof(IExecuteGuard));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Features.Indexed;
 using System;
 using System.Reflection;
 
@@ -6,20 +7,20 @@ namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class ExecuteStrategy
     {
-        private readonly IComponentContext _componentContext;
+        private readonly IIndex<string, IExecuteGuard> _registedGuards;
 
-        public ExecuteStrategy(MethodInfo command, Type canExecuteType, IComponentContext componentContext)
+        public ExecuteStrategy(MethodInfo command, Type canExecuteType, IIndex<string, IExecuteGuard> registedGuards)
         {
             Command = command;
             CanExecuteGuard = canExecuteType;
-            _componentContext = componentContext;
+            _registedGuards = registedGuards;
         }
 
         public bool CanExecute(object message)
         {
-            object resolvedType = null;
+            IExecuteGuard resolvedType = null;
             var name = CanExecuteGuard.FullName;
-            if(!_componentContext.TryResolveNamed(name, typeof(IExecuteGuard), out resolvedType))
+            if (!_registedGuards.TryGetValue(name, out resolvedType))
             {
                 try
                 {
@@ -31,7 +32,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
                 }
             }
 
-            return ((IExecuteGuard)resolvedType).CanExecute(message);
+            return resolvedType.CanExecute(message);
         }
 
         public void Execute(object target, object message)

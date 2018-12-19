@@ -30,3 +30,16 @@ C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\obj\Debug\Cal
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\xunit.runner.reporters.net452.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\xunit.runner.utility.net452.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\Caliburn.Micro.Platform.Core.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\Caliburn.Micro.Platform.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\FluentAssertions.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\NSubstitute.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\NSubstituteAutoMocker.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\System.ValueTuple.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\System.Windows.Interactivity.dll
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\Caliburn.Micro.Platform.xml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\Caliburn.Micro.Platform.Core.xml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\FluentAssertions.pdb
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\FluentAssertions.xml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\NSubstitute.xml
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Tests\bin\Debug\System.ValueTuple.xml

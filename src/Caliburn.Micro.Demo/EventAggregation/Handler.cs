@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Features.Indexed;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
         private readonly WeakReference _subscribedDataContext;
         private Dictionary<Type, ExecuteStrategy> _supportedHandlers = new Dictionary<Type, ExecuteStrategy>(); 
 
-        public Handler(object subscriber, IComponentContext componentContext)
+        public Handler(object subscriber, IIndex<string, IExecuteGuard> registedGuards)
         {
             _subscribedDataContext = new WeakReference(subscriber);
            
@@ -28,7 +29,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
 
                 if (executeMethod != null)
                 {
-                    var executeStrategy = new ExecuteStrategy(executeMethod, canExecute, componentContext);
+                    var executeStrategy = new ExecuteStrategy(executeMethod, canExecute, registedGuards);
                     _supportedHandlers[command] = executeStrategy;
                 }
             }

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Caliburn.Micro.Demo.Contracts;
 using Caliburn.Micro.Demo.EventAggregation;
+using Caliburn.Micro.Demo.Extensions;
 using Caliburn.Micro.Demo.Services;
 using Caliburn.Micro.Demo.Shopping.Extensions;
 using Caliburn.Micro.Demo.Shopping.Store.Amazon.Module.Model;
