@@ -11,21 +11,13 @@ namespace Caliburn.Micro.Demo.EventAggregation
     public class ExtendedEventAggregator : EventAggregator
     {
         private readonly List<Handler> _handlers;
-        private readonly IComponentContext _componentContext;
         private readonly IIndex<string, IExecuteGuard> _registeredGuards;
-
-        //public ExtendedEventAggregator(IComponentContext componentContext)
-        //{
-        //    _componentContext = componentContext;
-        //    _handlers = new List<Handler>();
-        //}
 
         public ExtendedEventAggregator(IIndex<string, IExecuteGuard> registeredGuards)
         {
             _registeredGuards = registeredGuards;
             _handlers = new List<Handler>();
         }
-
 
         public override void Subscribe(object subscriber)
         {
