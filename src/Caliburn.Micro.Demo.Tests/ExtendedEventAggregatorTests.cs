@@ -109,6 +109,28 @@ namespace Caliburn.Micro.Demo.Tests
                 });
             }
         }
+
+        [Fact]
+        public void EventAggregator_GivenClassWhichSubscribesOnce_ShouldNotBeInListWhenUnsubscribedIsCalled()
+        {
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterType<ExtendedEventAggregator>().As<IEventAggregator>();
+            var container = containerBuilder.Build();
+
+            using (var lifeTimeScope = container.BeginLifetimeScope())
+            {
+                var eventAggregator = lifeTimeScope.Resolve<IEventAggregator>();
+                var obj = new Object1();
+                eventAggregator.Subscribe(obj);
+
+                var first = eventAggregator.HandlerExistsFor(typeof(MyEvent));
+                first.Should().BeTrue();
+
+                eventAggregator.Unsubscribe(obj);
+                var second = eventAggregator.HandlerExistsFor(typeof(MyEvent));
+                second.Should().BeFalse();
+            } 
+        }
  
         #region Faked objects for test setups
 

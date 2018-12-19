@@ -49,6 +49,11 @@ namespace Caliburn.Micro.Demo.EventAggregation
             }
         }
 
+        public bool Handles(Type t)
+        {
+            return _supportedHandlers.Any(pair => pair.Key.GetTypeInfo().IsAssignableFrom(t.GetTypeInfo()));
+        }
+
         public bool Matches(object instance) => _subscribedDataContext.Target == instance;
         public bool IsDead => _subscribedDataContext.Target == null;
         public int ReferencedHashcode { get; }

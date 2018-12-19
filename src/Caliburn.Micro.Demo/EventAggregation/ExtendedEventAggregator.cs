@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Caliburn.Micro.Demo.EventAggregation
 {
-    public class ExtendedEventAggregator : EventAggregator
+    public class ExtendedEventAggregator : IEventAggregator
     {
         private readonly List<Handler> _handlers;
         private readonly IIndex<string, IExecuteGuard> _registeredGuards;
@@ -19,7 +19,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
             _handlers = new List<Handler>();
         }
 
-        public override void Subscribe(object subscriber)
+        public void Subscribe(object subscriber)
         {
             var handler = new Handler(subscriber, _registeredGuards);
             lock (_handlers)
@@ -31,7 +31,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
             }
         }
 
-        public override void Publish(object message, Action<System.Action> marshal)
+        public void Publish(object message, Action<System.Action> marshal)
         {
             Handler[] _toNotify;
             lock (_handlers)
@@ -55,7 +55,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
             });
         }
 
-        public override void Unsubscribe(object subscriber)
+        public void Unsubscribe(object subscriber)
         {
             Guard.Against.Null(subscriber);
             
@@ -68,6 +68,11 @@ namespace Caliburn.Micro.Demo.EventAggregation
                     _handlers.Remove(found);
                 }
             }
+        }
+
+        public bool HandlerExistsFor(Type type)
+        {
+            return _handlers.Any(handler => handler.Handles(type) & !handler.IsDead);
         }
     }
 }

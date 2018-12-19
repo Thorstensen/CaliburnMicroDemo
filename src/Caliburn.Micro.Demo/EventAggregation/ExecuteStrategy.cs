@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Autofac.Features.Indexed;
+﻿using Autofac.Features.Indexed;
 using System;
 using System.Reflection;
 
