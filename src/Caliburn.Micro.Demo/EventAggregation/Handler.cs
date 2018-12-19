@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-
 namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class Handler : IHandler
