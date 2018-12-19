@@ -7,6 +7,7 @@ using Xunit;
 using FluentAssertions;
 using Caliburn.Micro.Demo.Extensions;
 using Autofac.Features.Indexed;
+using System;
 
 namespace Caliburn.Micro.Demo.Tests
 {
@@ -89,6 +90,26 @@ namespace Caliburn.Micro.Demo.Tests
             }
         }
 
+        [Fact]
+        public void EventAggregator_GivenClassSubscribingTwice_ShouldThrowArgumentException()
+        {
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterType<ExtendedEventAggregator>().As<IEventAggregator>();
+            var container = containerBuilder.Build();
+
+            using (var lifeTimeScope = container.BeginLifetimeScope())
+            {
+                var eventAggregator = lifeTimeScope.Resolve<IEventAggregator>();
+                var obj = new Object1();
+
+                Assert.Throws<ArgumentException>(() =>
+                {
+                    eventAggregator.Subscribe(obj);
+                    eventAggregator.Subscribe(obj);
+                });
+            }
+        }
+ 
         #region Faked objects for test setups
 
         #region Test setup 1
@@ -235,6 +256,7 @@ namespace Caliburn.Micro.Demo.Tests
 
         #endregion
 
+     
         #endregion
     }
 }

@@ -83,6 +83,7 @@
     <Compile Include="EventAggregation\Handler.cs" />
     <Compile Include="EventAggregation\ICanHandle.cs" />
     <Compile Include="EventAggregation\IExecuteGuard.cs" />
+    <Compile Include="EventAggregation\IHandler.cs" />
     <Compile Include="Extensions\ContainerBuilderExtensions.cs" />
     <Compile Include="Framework\Guard.cs" />
     <Compile Include="Services\BasketService.cs" />

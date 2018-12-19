@@ -24,6 +24,9 @@ namespace Caliburn.Micro.Demo.EventAggregation
             var handler = new Handler(subscriber, _registeredGuards);
             lock (_handlers)
             {
+                if (_handlers.Any(existingHandler => existingHandler.ReferencedHashcode.Equals(handler.ReferencedHashcode)))
+                    throw new ArgumentException($"Handler {handler} is already added to the subscription list. " +
+                        $"This is potentially caused by calling 'Subscribe' several times on the same object.");
                 _handlers.Add(handler);
             }
         }

@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Caliburn.Micro.Demo.EventAggregation
 {
-    public class Handler
+    public class Handler : IHandler
     {
         private readonly WeakReference _subscribedDataContext;
         private Dictionary<Type, ExecuteStrategy> _supportedHandlers = new Dictionary<Type, ExecuteStrategy>(); 
@@ -16,8 +16,9 @@ namespace Caliburn.Micro.Demo.EventAggregation
         public Handler(object subscriber, IIndex<string, IExecuteGuard> registedGuards)
         {
             _subscribedDataContext = new WeakReference(subscriber);
-           
-            var interfaces = subscriber.GetType().GetTypeInfo().ImplementedInterfaces
+            ReferencedHashcode = subscriber.GetHashCode();
+
+             var interfaces = subscriber.GetType().GetTypeInfo().ImplementedInterfaces
                               .Where(i => i.GetTypeInfo().Name.Equals(typeof(ICanHandle<,>).Name));
 
             foreach (var @interface in interfaces)
@@ -49,7 +50,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
         }
 
         public bool Matches(object instance) => _subscribedDataContext.Target == instance;
-
         public bool IsDead => _subscribedDataContext.Target == null;
+        public int ReferencedHashcode { get; }
     }
 }
