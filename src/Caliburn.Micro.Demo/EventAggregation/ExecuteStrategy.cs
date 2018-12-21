@@ -36,7 +36,8 @@ namespace Caliburn.Micro.Demo.EventAggregation
 
         public void Execute(object target, object message)
         {
-            Command.Invoke(target, new[] { message });
+            if(target != null)
+                Command.Invoke(target, new[] { message });
         }
 
         public MethodInfo Command { get; }

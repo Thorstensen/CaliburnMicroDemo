@@ -72,6 +72,8 @@
     <Compile Include="Commands\AddItemToBasketCommand.cs" />
     <Compile Include="Contracts\IForSaleItem.cs" />
     <Compile Include="Contracts\IStore.cs" />
+    <Compile Include="Events\RemoveCustomerCommand.cs" />
+    <Compile Include="Events\UpdateCustomerEvent.cs" />
     <Compile Include="Events\BasketUpdatedEvent.cs" />
     <Compile Include="Extensions\ContainerBuilderExtensions.cs" />
     <Compile Include="Extensions\ContainerExtensions.cs" />
@@ -81,9 +83,17 @@
     <Compile Include="Model\GenericProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CanHandleAddItemsToBaskedCommand.cs" />
+    <Compile Include="ViewModels\CustomerShellViewModel.cs" />
+    <Compile Include="Views\CustomerShellView.xaml.cs">
+      <DependentUpon>CustomerShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\MyBasketNotificationBarViewModel.cs" />
     <Compile Include="ViewModels\MyBasketViewModel.cs" />
     <Compile Include="ViewModels\ShoppingLimitGuard.cs" />
+    <Compile Include="Views\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MyBasketNotificationBarView.xaml.cs">
       <DependentUpon>MyBasketNotificationBarView.xaml</DependentUpon>
     </Compile>
@@ -102,6 +112,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CustomerShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MyBasketNotificationBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

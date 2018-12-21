@@ -12,5 +12,5 @@
         /// </summary>
         /// <param name="command"></param>
         void Handle(TCommand command);
-    }
+    }   
 }

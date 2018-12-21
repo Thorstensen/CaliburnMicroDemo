@@ -1,6 +1,6 @@
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.csprojAssemblyReference.cache
-C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.csproj.CoreCompileInputs.cache
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.g.resources
+C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\obj\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.csproj.CoreCompileInputs.cache
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\bin\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.dll.config
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\bin\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.dll
 C:\knowit\02 demos\CaliburnMicroDemo\src\Caliburn.Micro.Demo.Shopping.Apple.Module\bin\Debug\Caliburn.Micro.Demo.Shopping.Apple.Module.pdb
