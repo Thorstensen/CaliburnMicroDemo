@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Caliburn.Micro.Demo.EventAggregation
 {
     public class ExtendedEventAggregator : IEventAggregator
@@ -66,6 +65,7 @@ namespace Caliburn.Micro.Demo.EventAggregation
                 if (found != null)
                 {
                     _handlers.Remove(found);
+                    GC.Collect();
                 }
             }
         }

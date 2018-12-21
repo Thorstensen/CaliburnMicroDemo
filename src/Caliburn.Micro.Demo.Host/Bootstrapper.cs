@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Autofac.Integration.Mef;
 using System.IO;
 using Caliburn.Micro.Demo.EventAggregation;
+using System.Windows.Threading;
 
 namespace Caliburn.Micro.Demo.Host
 {
@@ -48,6 +49,11 @@ namespace Caliburn.Micro.Demo.Host
 
             RegisterServices(builder);
             base.ConfigureContainer(builder);
+        }
+
+        protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"Woops: {e.Exception}", "Woopsi Daisy", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         protected override IEnumerable<Assembly> SelectAssemblies()
