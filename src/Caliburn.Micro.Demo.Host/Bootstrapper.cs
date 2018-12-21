@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using Autofac.Integration.Mef;
 using System.IO;
+using Caliburn.Micro.Demo.EventAggregation;
 
 namespace Caliburn.Micro.Demo.Host
 {
@@ -63,7 +64,7 @@ namespace Caliburn.Micro.Demo.Host
 
         private void RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
+            builder.RegisterType<ExtendedEventAggregator>().As<IEventAggregator>().SingleInstance();
         }
 
         private static ComposablePartCatalog GetComposableCatalog()

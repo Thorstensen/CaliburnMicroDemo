@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Caliburn.Micro.Demo
+﻿namespace Caliburn.Micro.Demo
 {
     public abstract class ViewModelBase : PropertyChangedBase
     {
@@ -13,10 +7,8 @@ namespace Caliburn.Micro.Demo
         public ViewModelBase(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
-            var implementsHandle = this is IHandle;
-            if (implementsHandle)
-                EventAggregator.Subscribe(this);
         }
+
         ~ViewModelBase()
         {
             EventAggregator.Unsubscribe(this);

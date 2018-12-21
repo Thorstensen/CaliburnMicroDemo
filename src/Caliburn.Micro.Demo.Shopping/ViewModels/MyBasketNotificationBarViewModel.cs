@@ -1,18 +1,14 @@
 ﻿using Caliburn.Micro.Demo.Shopping.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Caliburn.Micro.Demo.EventAggregation;
 
 namespace Caliburn.Micro.Demo.Shopping.ViewModels
 {
-    public class MyBasketNotificationBarViewModel : ViewModelBase,
-        IHandle<BasketUpdatedEvent>
+    public class MyBasketNotificationBarViewModel : ViewModelBase, ICanHandle<BasketUpdatedEvent, ShoppingLimitGuard>
     {
         public MyBasketNotificationBarViewModel(IEventAggregator eventAggregator, MyBasketViewModel basket) : base(eventAggregator)
         {
             BasketOverview = basket;
+            EventAggregator.Subscribe(this);
         }
 
         public void Handle(BasketUpdatedEvent message)
