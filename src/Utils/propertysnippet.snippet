@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Caliburn Micro Snippet</Title>
+      <Author>Tobias Moe Thorstensen</Author>
+      <Description>This generates a full property for Caliburn Micro projects</Description>
+      <Shortcut>propf</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>Property type</ToolTip>
+          <Default>type</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>property</ID>
+          <ToolTip>Backing field name</ToolTip>
+          <Default>property</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Property</ID>
+          <ToolTip>Public property name</ToolTip>
+          <Default>Property</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[
+		private $type$ _$property$;
+		public $type$ $Property$
+		{
+			get { return _$property$; }
+			set { SetProperty(ref _$property$, value); }
+		}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
